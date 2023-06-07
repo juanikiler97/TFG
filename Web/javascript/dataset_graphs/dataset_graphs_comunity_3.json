@@ -1,0 +1,159 @@
+{
+  "categories": [
+    {
+      "name": "HTMLElement"
+    },
+    {
+      "name": "WebGL"
+    },
+    {
+      "name": "SVG"
+    },
+    {
+      "name": "CSS"
+    },
+    {
+      "name": "Other"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "HTMLElement",
+      "category": 0
+    },
+    {
+      "name": "Node1",
+      "category": 0
+    },
+    {
+      "name": "Node6",
+      "category": 0
+    },
+    {
+      "name": "Node7",
+      "category": 1
+    },
+    {
+      "name": "WebGL",
+      "category": 1
+    },
+    {
+      "name": "Node2",
+      "category": 1
+    },
+    {
+      "name": "Node8",
+      "category": 2
+    },
+    {
+      "name": "SVG",
+      "category": 2
+    },
+    {
+      "name": "Node3",
+      "category": 2
+    },
+    {
+      "name": "Node4",
+      "category": 3
+    },
+    {
+      "name": "CSS",
+      "category": 3
+    },
+    {
+      "name": "Node9",
+      "category": 3
+    },
+    {
+      "name": "Node5",
+      "category": 4
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 1
+    },
+    {
+      "source": 0,
+      "target": 2
+    },
+    {
+      "source": 0,
+      "target": 3
+    },
+    {
+      "source": 0,
+      "target": 4
+    },
+    {
+      "source": 0,
+      "target": 5
+    },
+    {
+      "source": 1,
+      "target": 4
+    },
+    {
+      "source": 2,
+      "target": 3
+    },
+    {
+      "source": 3,
+      "target": 1
+    },
+    {
+      "source": 4,
+      "target": 2
+    },
+    {
+      "source": 4,
+      "target": 5
+    },
+    {
+      "source": 5,
+      "target": 6
+    },
+    {
+      "source": 6,
+      "target": 7
+    },
+    {
+      "source": 7,
+      "target": 8
+    },
+    {
+      "source": 8,
+      "target": 2
+    },
+    {
+      "source": 8,
+      "target": 3
+    },
+    {
+      "source": 9,
+      "target": 2
+    },
+    {
+      "source": 9,
+      "target": 4
+    },
+    {
+      "source": 9,
+      "target": 10
+    },
+    {
+      "source": 10,
+      "target": 11
+    },
+    {
+      "source": 11,
+      "target": 12
+    },
+    {
+      "source": 12,
+      "target": 4
+    }
+  ]
+}

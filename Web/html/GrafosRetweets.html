@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BI TWITTER DASHBOARD - INDEX</title>
+
+    <!-- LIBRERIAS DE BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- ESTILO CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- LIBRERIA PARA ICONOS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- LIBRERIA PARA ECHARTS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+</head>
+
+
+<body>
+<div class="d-flex" id = "wrapper">
+    <!-- MENU LATERAL -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+            <img src="../images/TwitterLogo.PNG" alt="logo" width="30" height="30"> BI TWITTER
+        </div>
+        <div class = "list-group list-group-flush my-3">
+            <a href="index.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class='bx bxs-dashboard'></i> Dashboard
+            </a>
+             <a href="#" class="list-group-item list-group-item-action bg-transparent second-text active dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#submenu1">
+      <i class='bx bx-network-chart icon'></i> Graphs
+    </a>
+            <div id="submenu1" class="collapse">
+              <a href="GrafosRetweets.html" class="list-group-item list-group-item-action bg-transparent second-text active">
+                <i class='bx bx-network-chart icon'></i> Retweets Graph
+              </a>
+              <a href="GrafosComunidades.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class='bx bx-network-chart icon'></i> Comunity Graph
+              </a>
+              <a href="GrafoFilledChord.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+               <i class='bx bx-network-chart icon'></i> Filled Graph
+              </a>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DE MENU LATERAL -->
+     <div class="page-content-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+        <div class="d-flex align-items-center">
+            <i class='bx bx-menu' style="font-size: 2em; margin-left: -15px;" id="menu-toggle"></i>
+        </div>
+    </nav>
+    <div class="container-fluid px-4">
+        <div style="text-align: center; margin-bottom: 1em;">
+            <h2 style="line-height: 1;">Grafo de retweets entre usuarios</h2>
+        </div>
+        <div style="height: 100vh; width: 100vw;">
+            <div id="chart_network_graph" style="height: 100%; width: 100%;"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="../javascript/netwrok_graphs/javascript_netwrok_graphs_retweets.js"></script>
+<script src="../javascript/dashboard_and_web/javascript_web.js"></script>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BI TWITTER DASHBOARD - INDEX</title>
+
+    <!-- LIBRERIAS DE BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- ESTILO CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- LIBRERIA PARA ICONOS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <!-- LIBRERIA PARA ECHARTS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.1/dist/echarts.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+
+<body>
+<div class="d-flex" id = "wrapper">
+    <!-- MENU LATERAL -->
+    <div class="bg-white" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">
+            <img src="../images/TwitterLogo.PNG" alt="logo" width="30" height="30"> BI TWITTER
+        </div>
+        <div class = "list-group list-group-flush my-3">
+            <a href="index.html" class="list-group-item list-group-item-action bg-transparent second-text active">
+                <i class='bx bxs-dashboard'></i> Dashboard
+            </a>
+            <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#submenu1">
+                <i class='bx bx-network-chart icon'></i> Graphs
+            </a>
+            <div id="submenu1" class="collapse">
+              <a href="GrafosRetweets.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class='bx bx-network-chart icon'></i> Retweets Graph
+              </a>
+              <a href="GrafosComunidades.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                <i class='bx bx-network-chart icon'></i> Comunity Graph
+              </a>
+              <a href="GrafoFilledChord.html" class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+               <i class='bx bx-network-chart icon'></i> Filled Graph
+              </a>
+            </div>
+        </div>
+    </div>
+    <!-- FIN DE MENU LATERAL -->
+    <div class="container-fluid">
+        <div class="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="d-flex align-items-center">
+                    <i class='bx bx-menu' style="font-size: 2em; margin-left: -15px;" id="menu-toggle"></i>
+                </div>
+            </nav>
+            <div class="px-4">
+                <h2>Informacion general</h2>
+                <div class="row g-3 my-2">
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2" id="tweets_count"></h3>
+                                <p class="fs-5">Tweets</p>
+                            </div>
+                            <i class="bx bxl-twitter fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2" id="retweets_count"></h3>
+                                <p class="fs-5">Usuarios</p>
+                            </div>
+                            <i class="bx bxs-user fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                            <div>
+                                <h3 class="fs-2" id="mentions_count"></h3>
+                                <p class="fs-5">Hastags</p>
+                            </div>
+                            <i class='bi bi-hash fs-1 primary-text border rounded-full secondary-bg p-3'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4">
+                    <h3 class="fs-4 mb-4">Evolucion tweets en un mes sobre Ucrania</h3>
+                    <div id="chartline" class="w-90" style="height: 400px;"></div>
+                </div>
+                <div class="row my-5">
+                    <div class="col-md-4">
+                        <h3 class="fs-4 mb-3">Top Hashtags</h3>
+                        <div id="chartbar" style="height: 400px; width: 88%;"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="fs-4 mb-3">Top personas con mas tweets</h3>
+                        <div id="chartbarVertical" style="height: 400px; width: 100%;"></div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="fs-4 mb-3">Top personas con mas Retweets</h3>
+                        <div id="chartbarVerticalTweets" style="height: 400px; width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="row my-8">
+  <h3 class="fs-4 mb-3">Seguidores vs número de tweets</h3>
+  <div class="col-sm-12 col-lg-6">
+    <div id="scatter" style="width: 100%; height: calc(100vh - 400px);"></div>
+  </div>
+  <div class="col-sm-12 col-lg-6">
+    <div class="table-responsive overflow-auto" style="max-height: 400px;">
+        <table id="information_users_twitter" class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre del usuario</th>
+                    <th scope="col">Fecha creación de la cuenta</th>
+                    <th scope="col">Número de seguidores</th>
+                    <th scope="col">Número de retweets</th>
+                    <th scope="col">Número de favoritos</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+<script src="../javascript/dashboard_and_web/javascript_web.js"></script>
+<script src="../javascript/dashboard_and_web/javascript_graphics_dashboard.js"></script>
+<script src="../javascript/dashboard_and_web/javascript_kpis.js"></script>
+</html>

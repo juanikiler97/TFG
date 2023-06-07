@@ -1,0 +1,38 @@
+[
+  {
+    "tweet_created_at": "2023-02-16",
+    "tweets": 321859
+  },
+  {
+    "tweet_created_at": "2023-02-17",
+    "tweets": 207017
+  },
+  {
+    "tweet_created_at": "2023-02-18",
+    "tweets": 172427
+  },
+  {
+    "tweet_created_at": "2023-02-19",
+    "tweets": 144621
+  },
+  {
+    "tweet_created_at": "2023-02-20",
+    "tweets": 300000
+  },
+  {
+    "tweet_created_at": "2023-02-21",
+    "tweets": 280717
+  },
+  {
+    "tweet_created_at": "2023-02-22",
+    "tweets": 113445
+  },
+  {
+    "tweet_created_at": "2023-02-23",
+    "tweets": 200000
+  },
+  {
+    "tweet_created_at": "2023-02-24",
+    "tweets": 40000
+  }
+]
