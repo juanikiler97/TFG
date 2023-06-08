@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": 0,
+      "label": "node0",
+      "size": 50,
+      "color": "#F00",
+      "x": 100,
+      "y": 100
+    },
+    {
+      "id": 1,
+      "label": "node1",
+      "size": 30,
+      "color": "#0F0",
+      "x": 200,
+      "y": 200
+    },
+    {
+      "id": 2,
+      "label": "node2",
+      "size": 80,
+      "color": "#00F",
+      "x": 300,
+      "y": 300
+    }
+  ],
+  "edges": [
+    {
+      "sourceID": 0,
+      "targetID": 1
+    },
+    {
+      "sourceID": 1,
+      "targetID": 2
+    }
+  ]
+}
